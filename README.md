@@ -33,13 +33,11 @@
 ***
 ### ***Future Updates***
 - [ ] Future Update 1
-- [ ] Future Update 2
+- [x] Future Update 2
 - [x] Completed Update
 - [x] ~~Strikethrough~~ Items Also
 ***
 ### ***Credits***
-Funny Images: [DuckDuckGo Search](https://start.duckduckgo.com/)
-
 Markdown Guide: [ia.net](https://ia.net/writer/support/basics/markdown-guide)
 
 Markdown Cheatsheet: [GitHub](https://www.markdownguide.org/cheat-sheet/)
