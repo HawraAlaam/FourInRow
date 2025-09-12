@@ -15,10 +15,6 @@
 * CSS
 * JS
 
-### ***Technologies Used***
-* HTML
-* CSS
-* JS
 ***
 ### ***Getting Started***
 ##### Sign up and sign in as a new user and then begin viewing the different sections of the website.
