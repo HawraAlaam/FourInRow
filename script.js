@@ -4,7 +4,6 @@ const disc = document.querySelector(".red")
 
 let turn = 0
 
-console.log(board)
 //FUNCTION IS HERE
 
 for (let i = 1; i <= 42; i++) {
@@ -12,11 +11,13 @@ for (let i = 1; i <= 42; i++) {
   board.appendChild(cells)
   cells.classList.add("cells")
 }
-
-let element
-//EVENTLISTENER IS HERE
-for (let i = 0; i < board.length; i++) {
-  element = board[i]
-  console.log(board[i])
-  element.addEventListener("click", () => {})
+let allCells = board.querySelectorAll(".cells")
+const handleClick = (cell) => {
+  cell.innerText = 1
 }
+
+//EVENTLISTENER IS HERE
+allCells.forEach((cell)=>{
+  cell.addEventListener("click" , () => handleClick(cell))
+})
+
