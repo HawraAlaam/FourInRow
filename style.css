@@ -77,11 +77,5 @@ input {
 }
 
 .red{
-  height: 110px;
-  width: 110px;
-  justify-self: center;
-  border-radius: 50%;
-  background-color:red;
-
-  display: none;
+  background-color: yellow;
 }
