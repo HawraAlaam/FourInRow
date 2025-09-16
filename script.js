@@ -1,7 +1,7 @@
 //VARIABLE IS HERE
 let board = document.querySelector(".board")
 let gameStatus = document.querySelector("h2")
-
+// console.log(gameStatus)
 let turn = 0
 let playerTurn = "red"
 let redChoices = []
@@ -95,6 +95,7 @@ allCells.forEach((div, index) => {
 })
 
 const checkForWin = () => {
+  console.log("here...")
   let choices
   if (playerTurn === "red") {
     choices = redChoices
@@ -104,13 +105,13 @@ const checkForWin = () => {
   let inARow = 0
   for (let i = 0; i < winningArrays.length; i++) {
     let combo = winningArrays[i]
-    inARow = 0
+    // inARow = 0
     for (let j = 0; j < combo.length; j++) {
       if (choices.includes(combo[j])) {
         inARow++
         console.log(inARow)
 
-        if (inARow === 3) {
+        if (inARow === 4) {
           gameStatus.innerText = `${playerTurn} WINS!`
           gameOver = true
         }
@@ -135,27 +136,22 @@ const handleClick = (cell) => {
     if (currentCell.style.backgroundColor === "") {
       currentCell.style.backgroundColor = playerTurn
       if (playerTurn === "red") {
-        redChoices.push(index)
+        redChoices.push(i)
+
         redChoices.sort
-        if (turn >= 7) {
-          checkForWin()
-        }
         playerTurn = "yellow"
       } else {
-        yellowChoices.push(index)
+        yellowChoices.push(i)
         yellowChoices.sort()
 
-        if (turn >= 7) {
-          checkForWin()
-        }
         playerTurn = "red"
       }
+      checkForWin()
       return currentCell
     }
-  }
-  return ""
-  if (!gameOver) {
-    gameStatus.innerText = `${playerTurn}'s Turn!`
+    if (!gameOver) {
+      gameStatus.innerText = `${playerTurn}'s Turn!`
+    }
   }
 }
 
