@@ -7,6 +7,7 @@ let playerTurn = "red"
 let redChoices = []
 let yellowChoices = []
 gameOver = false
+
 //wining array from https://github.com/kubowania/connect-four/blob/master/app.js
 const winningArrays = [
   [0, 1, 2, 3],
@@ -95,7 +96,6 @@ allCells.forEach((div, index) => {
 })
 
 const checkForWin = () => {
-  console.log("here...")
   let choices
   if (playerTurn === "red") {
     choices = redChoices
