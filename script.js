@@ -102,10 +102,10 @@ const checkForWin = () => {
   } else {
     choices = yellowChoices
   }
-  let inARow = 0
+  let inARow
   for (let i = 0; i < winningArrays.length; i++) {
     let combo = winningArrays[i]
-    // inARow = 0
+    inARow = 0
     for (let j = 0; j < combo.length; j++) {
       if (choices.includes(combo[j])) {
         inARow++
@@ -117,10 +117,10 @@ const checkForWin = () => {
         }
       }
     }
-  }
-  if (turn === 42 && !gameOver) {
-    gameStatus.innerText = "DRAW!"
-    gameOver = true
+    if (turn === 42 && !gameOver) {
+      gameStatus.innerText = "DRAW!"
+      gameOver = true
+    }
   }
 }
 
@@ -128,29 +128,36 @@ const handleClick = (cell) => {
   turn++
   const index = parseInt(cell.id)
   const col = index % 7
-
+  console.log(col)
   for (let row = 5; row >= 0; row--) {
     const i = row * 7 + col
     const currentCell = allCells[i]
 
     if (currentCell.style.backgroundColor === "") {
+
       currentCell.style.backgroundColor = playerTurn
       if (playerTurn === "red") {
         redChoices.push(i)
+        redChoices.sort()
+        // redChoices.reverse()
+        console.log(redChoices)
 
-        redChoices.sort
+        checkForWin()
         playerTurn = "yellow"
       } else {
         yellowChoices.push(i)
         yellowChoices.sort()
+        // yellowChoices.reverse()
+        console.log(yellowChoices)
 
+        checkForWin()
         playerTurn = "red"
       }
-      checkForWin()
+      if (!gameOver) {
+        gameStatus.innerText = `${playerTurn}'s Turn!`
+      }
+      // checkForWin()
       return currentCell
-    }
-    if (!gameOver) {
-      gameStatus.innerText = `${playerTurn}'s Turn!`
     }
   }
 }
