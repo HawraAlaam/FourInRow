@@ -28,9 +28,8 @@
 ![image header 3](PAGE2.png)
 ***
 ### ***Future Updates***
-- [ ] Future Update 1
-- [x] Future Update 2
-- [x] Completed Update
+- [x] Annimation
+- [] Sounds
 ***
 ### ***Credits***
 Markdown Guide: [ia.net](https://ia.net/writer/support/basics/markdown-guide)
