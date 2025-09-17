@@ -110,6 +110,14 @@ h2 {
   cursor: pointer;
 }
 
+.cells.win {
+  box-shadow: 0 0 0 10px rgb(124, 27, 27) inset;
+  transform: scale(1.1);
+  transition: transform 0.2s;
+  animation: blink 0.7s infinite;
+  animation: bgFlash 1s;
+}
+
 @keyframes spin {
   0% {
     transform: rotateY(0deg);
@@ -120,4 +128,20 @@ h2 {
   100% {
     transform: rotateY(calc(360deg * var(--spin-count)));
   }
+}
+@keyframes blink {
+  0%,
+  100% {
+    box-shadow: 0 0 0 5px gold inset;
+    transform: scale(1.1);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px gold inset;
+    transform: scale(1.2);
+  }
+}
+@keyframes bgFlash {
+  0% { background-color: white; }
+  50% { background-color: gold; }
+  100% { background-color: white; }
 }

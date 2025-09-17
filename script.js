@@ -116,6 +116,9 @@ const checkForWin = () => {
           gameStatus.innerText = `${playerName} WINS!`
           gameOver = true
           playAgain.style.visibility = "visible"
+          combo.forEach((id) => {
+            document.getElementById(id).classList.add("win")
+          })
         }
       }
     }
@@ -181,6 +184,7 @@ playAgain.addEventListener("click", () => {
 
   allCells.forEach((cell) => {
     cell.style.backgroundColor = ""
+    cell.classList.remove("win")
   })
 
   gameStatus.innerText = `${playerName}'s Turn!`
