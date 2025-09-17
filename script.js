@@ -3,7 +3,7 @@ let board = document.querySelector(".board")
 let gameStatus = document.querySelector("h2")
 // console.log(gameStatus)
 let turn = 0
-let playerTurn = "red"
+let playerTurn = "Red"
 let redChoices = []
 let yellowChoices = []
 gameOver = false
@@ -97,7 +97,7 @@ allCells.forEach((div, index) => {
 
 const checkForWin = () => {
   let choices
-  if (playerTurn === "red") {
+  if (playerTurn === "Red") {
     choices = redChoices
   } else {
     choices = yellowChoices
@@ -136,14 +136,14 @@ const handleClick = (cell) => {
     if (currentCell.style.backgroundColor === "") {
 
       currentCell.style.backgroundColor = playerTurn
-      if (playerTurn === "red") {
+      if (playerTurn === "Red") {
         redChoices.push(i)
         redChoices.sort()
         // redChoices.reverse()
         console.log(redChoices)
 
         checkForWin()
-        playerTurn = "yellow"
+        playerTurn = "Yellow"
       } else {
         yellowChoices.push(i)
         yellowChoices.sort()
@@ -151,12 +151,11 @@ const handleClick = (cell) => {
         console.log(yellowChoices)
 
         checkForWin()
-        playerTurn = "red"
+        playerTurn = "Red"
       }
       if (!gameOver) {
         gameStatus.innerText = `${playerTurn}'s Turn!`
       }
-      // checkForWin()
       return currentCell
     }
   }
