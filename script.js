@@ -187,6 +187,6 @@ playAgain.addEventListener("click", () => {
     cell.style.backgroundColor = ""
   })
 
-  gameStatus.innerText = `${playerTurn}'s Turn!`
+  gameStatus.innerText = `${playerName}'s Turn!`
   playAgain.style.visibility = "hidden"
 })
