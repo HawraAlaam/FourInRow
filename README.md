@@ -31,10 +31,9 @@
 - [ ] Future Update 1
 - [x] Future Update 2
 - [x] Completed Update
-- [x] ~~Strikethrough~~ Items Also
 ***
 ### ***Credits***
 Markdown Guide: [ia.net](https://ia.net/writer/support/basics/markdown-guide)
-
 Markdown Cheatsheet: [GitHub](https://www.markdownguide.org/cheat-sheet/)
+Winning Arrays : [GitHub](https://github.com/kubowania/connect-four/blob/master/app.js)
 
