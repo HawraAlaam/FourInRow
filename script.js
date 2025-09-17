@@ -1,9 +1,11 @@
 //VARIABLE IS HERE
 let board = document.querySelector(".board")
 let gameStatus = document.querySelector("h2")
+let playAgain = document.querySelector(".reset")
 // console.log(gameStatus)
 let turn = 0
-let playerTurn = "Red"
+let playerTurn = "#FF6FFF"
+let playerName = "Pink"
 let redChoices = []
 let yellowChoices = []
 gameOver = false
@@ -97,7 +99,7 @@ allCells.forEach((div, index) => {
 
 const checkForWin = () => {
   let choices
-  if (playerTurn === "Red") {
+  if (playerTurn === "#FF6FFF") {
     choices = redChoices
   } else {
     choices = yellowChoices
@@ -112,14 +114,16 @@ const checkForWin = () => {
         console.log(inARow)
 
         if (inARow === 4) {
-          gameStatus.innerText = `${playerTurn} WINS!`
+          gameStatus.innerText = `${playerName} WINS!`
           gameOver = true
+          playAgain.style.visibility = "visible"
         }
       }
     }
     if (turn === 42 && !gameOver) {
       gameStatus.innerText = "DRAW!"
       gameOver = true
+      playAgain.style.visibility = "visible"
     }
   }
 }
@@ -134,16 +138,16 @@ const handleClick = (cell) => {
     const currentCell = allCells[i]
 
     if (currentCell.style.backgroundColor === "") {
-
       currentCell.style.backgroundColor = playerTurn
-      if (playerTurn === "Red") {
+      if (playerTurn === "#FF6FFF") {
         redChoices.push(i)
         redChoices.sort()
         // redChoices.reverse()
         console.log(redChoices)
 
         checkForWin()
-        playerTurn = "Yellow"
+        playerName = "Mint"
+        playerTurn = "#6FFF9E"
       } else {
         yellowChoices.push(i)
         yellowChoices.sort()
@@ -151,10 +155,12 @@ const handleClick = (cell) => {
         console.log(yellowChoices)
 
         checkForWin()
-        playerTurn = "Red"
+        playerName = "Pink"
+        playerTurn = "#FF6FFF"
+
       }
       if (!gameOver) {
-        gameStatus.innerText = `${playerTurn}'s Turn!`
+        gameStatus.innerText = `${playerName}'s Turn!`
       }
       return currentCell
     }
@@ -168,4 +174,19 @@ allCells.forEach((cell) => {
       handleClick(cell)
     }
   })
+})
+
+playAgain.addEventListener("click", () => {
+  turn = 0
+  playerTurn = "#FF6FFF"
+  redChoices = []
+  yellowChoices = []
+  gameOver = false
+
+  allCells.forEach((cell) => {
+    cell.style.backgroundColor = ""
+  })
+
+  gameStatus.innerText = `${playerTurn}'s Turn!`
+  playAgain.style.visibility = "hidden"
 })
