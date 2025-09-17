@@ -2,12 +2,12 @@
 let board = document.querySelector(".board")
 let gameStatus = document.querySelector("h2")
 let playAgain = document.querySelector(".reset")
-// console.log(gameStatus)
+
 let turn = 0
 let playerTurn = "#FF6FFF"
 let playerName = "Pink"
-let redChoices = []
-let yellowChoices = []
+let pinkChoices = []
+let mintChoices = []
 gameOver = false
 
 //wining array from https://github.com/kubowania/connect-four/blob/master/app.js
@@ -100,9 +100,9 @@ allCells.forEach((div, index) => {
 const checkForWin = () => {
   let choices
   if (playerTurn === "#FF6FFF") {
-    choices = redChoices
+    choices = pinkChoices
   } else {
-    choices = yellowChoices
+    choices = mintChoices
   }
   let inARow
   for (let i = 0; i < winningArrays.length; i++) {
@@ -111,7 +111,6 @@ const checkForWin = () => {
     for (let j = 0; j < combo.length; j++) {
       if (choices.includes(combo[j])) {
         inARow++
-        console.log(inARow)
 
         if (inARow === 4) {
           gameStatus.innerText = `${playerName} WINS!`
@@ -132,7 +131,7 @@ const handleClick = (cell) => {
   turn++
   const index = parseInt(cell.id)
   const col = index % 7
-  console.log(col)
+
   for (let row = 5; row >= 0; row--) {
     const i = row * 7 + col
     const currentCell = allCells[i]
@@ -140,24 +139,21 @@ const handleClick = (cell) => {
     if (currentCell.style.backgroundColor === "") {
       currentCell.style.backgroundColor = playerTurn
       if (playerTurn === "#FF6FFF") {
-        redChoices.push(i)
-        redChoices.sort()
-        // redChoices.reverse()
-        console.log(redChoices)
+        pinkChoices.push(i)
+        pinkChoices.sort()
+        console.log(pinkChoices)
 
         checkForWin()
         playerName = "Mint"
         playerTurn = "#6FFF9E"
       } else {
-        yellowChoices.push(i)
-        yellowChoices.sort()
-        // yellowChoices.reverse()
-        console.log(yellowChoices)
+        mintChoices.push(i)
+        mintChoices.sort()
+        console.log(mintChoices)
 
         checkForWin()
         playerName = "Pink"
         playerTurn = "#FF6FFF"
-
       }
       if (!gameOver) {
         gameStatus.innerText = `${playerName}'s Turn!`
@@ -179,8 +175,8 @@ allCells.forEach((cell) => {
 playAgain.addEventListener("click", () => {
   turn = 0
   playerTurn = "#FF6FFF"
-  redChoices = []
-  yellowChoices = []
+  pinkChoices = []
+  mintChoices = []
   gameOver = false
 
   allCells.forEach((cell) => {

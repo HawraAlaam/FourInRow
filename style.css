@@ -2,8 +2,8 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  background-color: #F0F8FF;
-  color: #3A3A3A;
+  background-color: #f0f8ff;
+  color: #3a3a3a;
 
   display: flex;
   text-align: center;
@@ -25,12 +25,12 @@ body {
     cubic-bezier(0.1, 0.7, 0.1, 1) infinite;
 }
 #A {
-  background-color: #FF6FFF;
-  border: #FF6FFF;
+  background-color: #ff6fff;
+  border: #ff6fff;
 }
 #B {
-  background-color: #6FFF9E;
-  border: #6FFF9E;
+  background-color: #6fff9e;
+  border: #6fff9e;
 }
 header {
   font-size: 90px;
@@ -64,8 +64,8 @@ h2 {
   border-radius: 15px;
   border: none;
 
-  background-color: #3A3A3A;
-  color: #F0F8FF;
+  background-color: #3a3a3a;
+  color: #f0f8ff;
   font-weight: bold;
   cursor: pointer;
 }
@@ -73,7 +73,7 @@ h2 {
 .board {
   height: 850px;
   width: 1000px;
-  background-color: #FFD700;
+  background-color: #ffd700;
   border-radius: 20px;
   display: grid;
   grid-template-columns: repeat(7, 120px);
@@ -86,7 +86,7 @@ h2 {
 
 .cells {
   background-color: white;
-  border: solid #FFD700;
+  border: solid #ffd700;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -104,8 +104,8 @@ h2 {
   border-radius: 15px;
   border: none;
 
-  background-color: #3A3A3A;
-  color: #F0F8FF;
+  background-color: #3a3a3a;
+  color: #f0f8ff;
   font-weight: bold;
   cursor: pointer;
 }
