@@ -19,7 +19,7 @@
 ### ***Getting Started***
 ##### Sign up and sign in as a new user and then begin viewing the different sections of the website.
 ##### A Trello board was used to keep track of development progress and can be viewed [https://github.com/HawraAlaam/FourInRow.git](URL).
-##### The project was deployed and can be viewed [here](https://moaning-cause.surge.sh).
+##### The project was deployed and can be viewed [here](https://useless-wall.surge.sh).
 ***
 ### ***Screenshots***
 ##### Page 1
