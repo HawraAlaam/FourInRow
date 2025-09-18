@@ -25,7 +25,12 @@
 ##### Page 1
 ![image](./PAGE1.png)
 ##### Page 2
-![image header 3](PAGE2.png)
+![image ](./PAGE2.png)
+##### Page1 New
+![image ](./projectPage1.png)
+##### Page2 New
+![image ](./projectPage2.png)
+
 ***
 ### ***Future Updates***
 - [x] Annimation
